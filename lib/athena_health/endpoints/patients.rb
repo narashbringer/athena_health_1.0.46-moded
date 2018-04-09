@@ -97,7 +97,7 @@ module AthenaHealth
         response = @api.call(
           endpoint: "#{practice_id}/chart/#{patient_id}/labresults",
           method: :get,
-          params: params.merge!{ departmentid: department_id }
+          params: params.merge!(departmentid: department_id)
         )
 
         LabResultCollection.new(response)
