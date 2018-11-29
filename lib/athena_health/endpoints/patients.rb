@@ -196,6 +196,14 @@ module AthenaHealth
           body: params.merge!(departmentid: department_id.to_s)
         )
       end
+      
+      def create_patient_document_phonemessage(practice_id:, department_id:, patient_id:, params: {})
+        @api.call(
+          endpoint: "#{practice_id}/patients/#{patient_id}/documents/phonemessage",
+          method: :post,
+          body: params.merge!(departmentid: department_id.to_s)
+        )
+      end
 
       def patient_default_pharmacy(practice_id:, department_id:, patient_id:)
         response = @api.call(
